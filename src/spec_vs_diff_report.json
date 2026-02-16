@@ -1,0 +1,70 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-16T05:41:01.212Z",
+  "summary": "Most core UI requirements (full-screen dimmed bg, split responsive layout, category list, glassmorphism overlay, vinyl image with play/pause-controlled rotation, and base-path-safe asset URL helper) appear implemented. One exact-text requirement for the tagline does not match the spec. Several unrequested additions (backend/auth/actor/query plumbing and a promotional footer link) were introduced.",
+  "missing_requirements": [
+    {
+      "id": "REQ-3",
+      "requirement": "Tagline text must match exactly: \"Not just for a television, Teleport to where it’s written.\"",
+      "reason": "The implemented tagline uses a straight apostrophe (\"it's\") instead of the required curly apostrophe (\"it’s\"), so it is not an exact match.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Added an empty backend canister/actor (Motoko) file.",
+      "reason": "BuildRequest explicitly constrains to no additional backend services; backend additions were not requested for the portfolio UI.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Introduced Internet Identity authentication/provider and identity-dependent actor creation logic.",
+      "reason": "Non-goals explicitly include not adding third-party authentication; the BuildRequest did not request any authentication features.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Added React Query-backed actor/query scaffolding for backend integration.",
+      "reason": "The BuildRequest did not request backend querying/actor plumbing for this UI-only portfolio experience.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/main.tsx"
+      ]
+    },
+    {
+      "description": "Added a fixed footer with a promotional outbound link to caffeine.ai including UTM parameters.",
+      "reason": "Not requested by any requirement; introduces extra UI/content beyond the specified layout and elements.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/CategoryOverlay.tsx",
+    "frontend/src/components/VinylPlayer.tsx",
+    "frontend/src/content/categories.ts",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/assetUrl.ts",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

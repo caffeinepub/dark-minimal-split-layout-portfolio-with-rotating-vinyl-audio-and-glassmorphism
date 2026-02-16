@@ -1,0 +1,198 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Dark minimal split-layout portfolio with rotating vinyl, audio toggle, and glass overlays",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement a single-page dark minimal UI with a full-viewport dimmed bg.png background and white typography.",
+      "acceptanceCriteria": [
+        "The background covers the full viewport without tiling or stretching artifacts (uses a cover-style treatment).",
+        "A dimming treatment is applied so foreground white text is readable.",
+        "All primary text renders in white or near-white and maintains sufficient contrast against the dimmed background."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page layout root that renders a full-viewport background using the static asset bg.png with a dimming overlay layer and white/near-white typography applied to primary text."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global styling entry point for dark minimal appearance (e.g., base background/foreground variables and default text color) to ensure white typography reads over the dimmed background."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build a responsive, horizontally split Flexbox layout with left content column and right vinyl column that adapts on small screens.",
+      "acceptanceCriteria": [
+        "On desktop widths, content is displayed as two side-by-side columns (left and right) using Flexbox.",
+        "On narrow/mobile widths, the layout adapts to avoid overlap (e.g., columns stack and remain usable).",
+        "No interactive element is clipped off-screen at common viewport sizes (mobile and desktop)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Implement the split layout using Flexbox (left column for title/tagline/categories, right column for vinyl UI) with responsive breakpoints to stack/reflow on small screens and prevent overlap/clipping."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Render the left column title, cursive italic tagline, and an interactive vertical category list with the required labels.",
+      "acceptanceCriteria": [
+        "The title text matches exactly: \"shibhi.studio\".",
+        "The tagline text matches exactly and is styled cursive and italic.",
+        "The categories appear as a vertical list with clear spacing and are clickable/tappable."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/categories.ts",
+          "operation": "create",
+          "description": "Create a frontend-accessible structured data source defining the category labels (Photography, Blender & Animations, Design, Electronics) and associated content payloads for dynamic overlay loading."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Render the left column with exact title text \"shibhi.studio\", the exact cursive italic tagline, and a vertical list of category controls sourced from frontend/src/content/categories.ts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add hover/active/pointer/focus affordances and keyboard accessibility for categories, overlays, and play/pause.",
+      "acceptanceCriteria": [
+        "Category items show a pointer cursor and visible hover styling on desktop.",
+        "Category items and the play/pause button have visible focus styles when navigated via keyboard.",
+        "Users can toggle play/pause using keyboard activation on the play/pause control.",
+        "Users can open a category overlay via keyboard activation on a category item."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CategoryOverlay.tsx",
+          "operation": "create",
+          "description": "Create an accessible overlay component for category content. Use the shadcn-ui Dialog component to provide keyboard accessibility (focus management, Escape-to-close) and interaction patterns; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure category items and play/pause are implemented as keyboard-activatable controls with visible focus styles (focus-visible), hover/active states, and correct open/close/toggle behaviors wired to the overlay and audio state."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add/adjust global focus-visible styling (or Tailwind base overrides) so keyboard focus indicators are clearly visible on dark backgrounds."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Show a large vinyl.png in the right column and rotate it smoothly only while audio is playing.",
+      "acceptanceCriteria": [
+        "The vinyl image is visibly large relative to the right column and remains fully visible without overlap.",
+        "When playback is active, the vinyl rotates smoothly (no stuttery frame-to-frame jumps).",
+        "When playback is paused, the vinyl stops rotating (or holds its current angle) and remains still."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/VinylPlayer.tsx",
+          "operation": "create",
+          "description": "Create a VinylPlayer component that renders vinyl.png at a large size and applies a smooth CSS-based continuous rotation animation when in the playing state, pausing the animation when not playing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the right column to render the VinylPlayer component and pass it the playing/paused state so rotation starts and stops appropriately."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add a centered play/pause toggle atop the vinyl that controls MP3 playback and the vinyl rotation state.",
+      "acceptanceCriteria": [
+        "The play/pause control is visually centered on top of the vinyl image.",
+        "Clicking/tapping the control starts audio playback and starts rotation.",
+        "Clicking/tapping again pauses audio playback and pauses rotation.",
+        "The control’s label/icon clearly reflects the current state (play vs pause)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/VinylPlayer.tsx",
+          "operation": "modify",
+          "description": "Add a centered play/pause button layered above the vinyl that toggles an HTMLAudioElement playing state and keeps the rotation state in sync. Use the shadcn-ui Button component for consistent styling and accessibility; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Implement glassmorphism category overlays that open per category and show dynamically selected content, with dismiss controls.",
+      "acceptanceCriteria": [
+        "Clicking a category opens an overlay panel above the main layout.",
+        "The overlay uses a glassmorphism look (semi-transparent background and visible backdrop blur).",
+        "Overlay content is loaded dynamically based on which category was clicked (not hardcoded to a single static block).",
+        "The overlay can be dismissed (e.g., close button and/or clicking outside and/or Escape key)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CategoryOverlay.tsx",
+          "operation": "modify",
+          "description": "Implement the glassmorphism styling (semi-transparent surface plus backdrop blur) and render dynamic content based on the selected category data; ensure dismiss via close control, click-outside, and Escape (via Dialog behavior)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Manage selected-category state and wire category clicks/keyboard activation to open CategoryOverlay with the correct dynamically loaded content."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Reference bg.png, vinyl.png, and the MP3 as frontend static assets in a way that works under non-root base paths.",
+      "acceptanceCriteria": [
+        "The page loads bg.png and vinyl.png correctly in production builds without relying on absolute root-only paths.",
+        "The MP3 file is fetched and played successfully in production builds.",
+        "No broken asset links occur when the app is hosted under a subpath (not just domain root)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/bg.png",
+          "operation": "create",
+          "description": "Add the static background image asset bg.png to the frontend public directory so it is served as a static file."
+        },
+        {
+          "path": "frontend/public/vinyl.png",
+          "operation": "create",
+          "description": "Add the static vinyl image asset vinyl.png to the frontend public directory so it is served as a static file."
+        },
+        {
+          "path": "frontend/public/audio.mp3",
+          "operation": "create",
+          "description": "Add an MP3 audio file (audio.mp3) as a frontend static asset to be played by the vinyl play/pause control."
+        },
+        {
+          "path": "frontend/src/lib/assetUrl.ts",
+          "operation": "create",
+          "description": "Create a small helper that builds static asset URLs using the app base path (e.g., import.meta.env.BASE_URL) so asset references remain valid under subpath hosting."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update bg.png usage to resolve via the base-path-safe asset URL helper (not hardcoded absolute paths) and ensure the background is applied with cover-style behavior."
+        },
+        {
+          "path": "frontend/src/components/VinylPlayer.tsx",
+          "operation": "modify",
+          "description": "Update vinyl.png and audio.mp3 references to resolve via the base-path-safe asset URL helper so playback and images work when hosted under a subpath."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Ensure the HTML entry remains compatible with subpath builds (avoid introducing absolute root-only asset paths in the document)."
+        }
+      ]
+    }
+  ]
+}

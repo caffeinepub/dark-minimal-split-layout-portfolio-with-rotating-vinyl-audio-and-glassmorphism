@@ -1,0 +1,180 @@
+{
+  "kind": "build_request",
+  "title": "Dark minimal split-layout portfolio with rotating vinyl + audio and glassmorphism overlays",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page dark, minimal, experimental portfolio UI with a full-screen background image named \"bg.png\" that is visually dimmed (reduced brightness) and uses white typography throughout.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The site should use a full-screen background image (bg.png) with reduced brightness and white typography."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The background covers the full viewport without tiling or stretching artifacts (uses a cover-style treatment).",
+        "A dimming treatment is applied so foreground white text is readable.",
+        "All primary text renders in white or near-white and maintains sufficient contrast against the dimmed background."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a horizontally split layout using Flexbox: left column for title/tagline/categories, right column for the vinyl UI. Ensure elements are aligned, non-overlapping, and responsive (including small screens).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The layout must be horizontally split using Flexbox, with a left column containing the site title… and… category options… The right column should feature a large vinyl record image…",
+          "All elements must be properly aligned, non-overlapping, responsive…"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On desktop widths, content is displayed as two side-by-side columns (left and right) using Flexbox.",
+        "On narrow/mobile widths, the layout adapts to avoid overlap (e.g., columns stack and remain usable).",
+        "No interactive element is clipped off-screen at common viewport sizes (mobile and desktop)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Render the left column content with: (1) site title text exactly \"shibhi.studio\"; (2) a cursive italic tagline exactly \"Not just for a television, Teleport to where it’s written.\"; (3) a vertical list of interactive categories: Photography, Blender & Animations, Design, Electronics.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "left column containing the site title “shibhi.studio”, a cursive italic tagline reading “Not just for a television, Teleport to where it’s written.”, and a vertical list of fully interactive category options such as Photography, Blender & Animations, Design, and Electronics."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The title text matches exactly: \"shibhi.studio\".",
+        "The tagline text matches exactly and is styled cursive and italic.",
+        "The categories appear as a vertical list with clear spacing and are clickable/tappable."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add clear pointer/hover/active interaction affordances for category options and the play/pause button (e.g., cursor change, hover styling, focus styles). Ensure keyboard accessibility for opening/closing overlays and toggling play/pause.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "…fully interactive category options…",
+          "…show clear pointer interaction…"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Category items show a pointer cursor and visible hover styling on desktop.",
+        "Category items and the play/pause button have visible focus styles when navigated via keyboard.",
+        "Users can toggle play/pause using keyboard activation on the play/pause control.",
+        "Users can open a category overlay via keyboard activation on a category item."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Display a large vinyl record image named \"vinyl.png\" in the right column and implement smooth continuous rotation when audio is playing; rotation must pause when audio is paused.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The right column should feature a large vinyl record image (vinyl.png) that rotates smoothly."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The vinyl image is visibly large relative to the right column and remains fully visible without overlap.",
+        "When playback is active, the vinyl rotates smoothly (no stuttery frame-to-frame jumps).",
+        "When playback is paused, the vinyl stops rotating (or holds its current angle) and remains still."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add a play/pause toggle button positioned at the center of the vinyl. When pressed, it must start/pause playback of an MP3 audio file and simultaneously control the vinyl rotation state.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "A play/pause toggle button must be positioned at the center of the vinyl; when this middle button is pressed, it should start or pause playback of an MP3 audio file and simultaneously control the vinyl’s rotation."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The play/pause control is visually centered on top of the vinyl image.",
+        "Clicking/tapping the control starts audio playback and starts rotation.",
+        "Clicking/tapping again pauses audio playback and pauses rotation.",
+        "The control’s label/icon clearly reflects the current state (play vs pause)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Implement category overlays: clicking any category opens a small glass-morphism style overlay panel (transparent with blurred backdrop) that displays dynamically loaded content for that category.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Clicking any category option should open a small glass-morphism style overlay panel with a transparent, blurred appearance that displays dynamically loaded content."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking a category opens an overlay panel above the main layout.",
+        "The overlay uses a glassmorphism look (semi-transparent background and visible backdrop blur).",
+        "Overlay content is loaded dynamically based on which category was clicked (not hardcoded to a single static block).",
+        "The overlay can be dismissed (e.g., close button and/or clicking outside and/or Escape key)."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Ensure all static assets (bg.png, vinyl.png, and the MP3 file) are handled as frontend static files and referenced in a way that works when deployed under a non-root base path (e.g., GitHub Pages-style subpath hosting).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "…intended to be hosted on GitHub and deployed via GitHub Pages…"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page loads bg.png and vinyl.png correctly in production builds without relying on absolute root-only paths.",
+        "The MP3 file is fetched and played successfully in production builds.",
+        "No broken asset links occur when the app is hosted under a subpath (not just domain root)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use the existing React + TypeScript + Tailwind + React Query + shadcn/ui template; do not introduce a framework-free (vanilla-only) rewrite.",
+    "Do not edit any files under the immutable paths listed in SYSTEM_CONTEXT (compose existing UI components instead).",
+    "Do not add additional backend services; keep any needed data for category content in frontend-accessible sources (e.g., local structured data files)."
+  ],
+  "nonGoals": [
+    "Implementing actual GitHub Pages deployment workflows/actions (only ensure the built site works under subpath hosting constraints).",
+    "Adding third-party authentication, external databases, or real-time features.",
+    "Building a multi-page router-driven site unless required to meet the overlay/content behavior (keep it a single-page experience)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

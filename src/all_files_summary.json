@@ -1,0 +1,19 @@
+{
+  "backend/main.mo": "Empty actor definition with no implemented logic.",
+  "feature_evidence.json": "Lists implemented features, associated files, components, and test IDs for the portfolio UI project.",
+  "frontend-file-summaries.txt": "Contains prewritten summaries for key frontend source files used in the portfolio UI.",
+  "frontend/index.css": "Defines Tailwind base layers and OKLCH color variables for light and dark themes with global styling.",
+  "frontend/index.html": "Basic HTML entry point that mounts the React app and loads main.tsx.",
+  "frontend/src/App.tsx": "Main React layout combining background image, left-side category navigation, right-side vinyl player, and category overlay.",
+  "frontend/src/components/CategoryOverlay.tsx": "Dialog component showing category details with scrollable content and a close button.",
+  "frontend/src/components/VinylPlayer.tsx": "Renders rotating vinyl image with an audio-backed play/pause button.",
+  "frontend/src/content/categories.ts": "Exports category definitions containing names, descriptions, and detailed content blocks.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages authenticated or anonymous backend actors and handles query invalidation.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and provider for Internet Identity authentication, managing identity loading, login, logout, and login status states.",
+  "frontend/src/hooks/useQueries.ts": "Defines a placeholder hook that exposes actor and fetch status, with no backend queries implemented.",
+  "frontend/src/index.css": "Defines Tailwind base styling, CSS variables, dark mode theming, global styles, focus styles, and utility classes including animations and glassmorphism.",
+  "frontend/src/lib/assetUrl.ts": "Builds asset URLs using the Vite base path, ensuring correct resolution for subpath deployments.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with React Query and Internet Identity providers.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, typography, container settings, animations, and extended theme values.",
+  "project_state.json": "Tracks project metadata, features, and architectural notes for a static dark portfolio site with vinyl UI and interactive categories."
+}

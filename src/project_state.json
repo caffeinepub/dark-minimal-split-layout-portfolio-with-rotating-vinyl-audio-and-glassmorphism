@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Dark, minimal experimental portfolio website for GitHub Pages with split Flexbox layout, background image, rotating vinyl with audio play/pause control, and glassmorphism overlays for category content.",
+  "architectural_notes": [
+    "Deploy as a static site compatible with GitHub Pages (relative paths; no server dependencies).",
+    "Framework-free implementation using plain HTML/CSS/JS; Flexbox for the horizontal split layout.",
+    "Vinyl rotation should be controlled via CSS animation toggled by JS and kept in sync with HTMLAudioElement play/pause.",
+    "Glassmorphism overlay: use CSS backdrop-filter blur with a transparent panel; content populated dynamically (e.g., from embedded JSON or separate static files)."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-dark-minimal-experimental-portfolio-ui-with-a-full-screen-background-image-named-bg-png-that-is-visually-dimmed-reduced-brightness-and-uses-white-typography-throughout",
+      "title": "Create a single-page dark, minimal, experimental portfolio UI with a full-screen background image named \"bg.png\" that is visually dimmed (reduced brightness) and uses white typography throughout.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-horizontally-split-layout-using-flexbox-left-column-for-title-tagline-categories-right-column-for-the-vinyl-ui-ensure-elements-are-aligned-non-overlapping-and-responsive-including-small-screens",
+      "title": "Implement a horizontally split layout using Flexbox: left column for title/tagline/categories, right column for the vinyl UI. Ensure elements are aligned, non-overlapping, and responsive (including small screens).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-left-column-content-with-1-site-title-text-exactly-shibhi-studio-2-a-cursive-italic-tagline-exactly-not-just-for-a-television-teleport-to-where-it-s-written-3-a-vertical-list-of-interactive-categories-photography-blender-animations-design-electronics",
+      "title": "Render the left column content with: (1) site title text exactly \"shibhi.studio\"; (2) a cursive italic tagline exactly \"Not just for a television, Teleport to where it’s written.\"; (3) a vertical list of interactive categories: Photography, Blender & Animations, Design, Electronics.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-clear-pointer-hover-active-interaction-affordances-for-category-options-and-the-play-pause-button-e-g-cursor-change-hover-styling-focus-styles-ensure-keyboard-accessibility-for-opening-closing-overlays-and-toggling-play-pause",
+      "title": "Add clear pointer/hover/active interaction affordances for category options and the play/pause button (e.g., cursor change, hover styling, focus styles). Ensure keyboard accessibility for opening/closing overlays and toggling play/pause.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-a-large-vinyl-record-image-named-vinyl-png-in-the-right-column-and-implement-smooth-continuous-rotation-when-audio-is-playing-rotation-must-pause-when-audio-is-paused",
+      "title": "Display a large vinyl record image named \"vinyl.png\" in the right column and implement smooth continuous rotation when audio is playing; rotation must pause when audio is paused.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-play-pause-toggle-button-positioned-at-the-center-of-the-vinyl-when-pressed-it-must-start-pause-playback-of-an-mp3-audio-file-and-simultaneously-control-the-vinyl-rotation-state",
+      "title": "Add a play/pause toggle button positioned at the center of the vinyl. When pressed, it must start/pause playback of an MP3 audio file and simultaneously control the vinyl rotation state.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-category-overlays-clicking-any-category-opens-a-small-glass-morphism-style-overlay-panel-transparent-with-blurred-backdrop-that-displays-dynamically-loaded-content-for-that-category",
+      "title": "Implement category overlays: clicking any category opens a small glass-morphism style overlay panel (transparent with blurred backdrop) that displays dynamically loaded content for that category.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-all-static-assets-bg-png-vinyl-png-and-the-mp3-file-are-handled-as-frontend-static-files-and-referenced-in-a-way-that-works-when-deployed-under-a-non-root-base-path-e-g-github-pages-style-subpath-hosting",
+      "title": "Ensure all static assets (bg.png, vinyl.png, and the MP3 file) are handled as frontend static files and referenced in a way that works when deployed under a non-root base path (e.g., GitHub Pages-style subpath hosting).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create full-screen dark minimal layout with bg.png dimmed and white typography; horizontally split via Flexbox into left/right columns",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Left column: title “shibhi.studio”, cursive italic tagline, and interactive vertical category list (Photography, Blender & Animations, Design, Electronics) with clear pointer/hover states",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Right column: display large vinyl.png that rotates smoothly when playing",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Center play/pause button on vinyl that starts/pauses MP3 playback and synchronizes vinyl rotation state",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "On category click, open a small glassmorphism overlay panel (transparent + blurred) that shows dynamically loaded content",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Ensure responsive, non-overlapping alignment and correct behavior when deployed on GitHub Pages using framework-free HTML/CSS/JS",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Dark minimal split-layout portfolio with rotating vinyl + audio and glassmorphism overlays",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,10 @@
+{
+  "frontend/src/App.tsx": "Main application component with full-screen background, horizontally split Flexbox layout containing left column (title, tagline, categories) and right column (vinyl player), plus glassmorphism category overlay and footer.",
+  "frontend/src/components/VinylPlayer.tsx": "Vinyl player component that displays a rotating vinyl.png image with a centered play/pause button that controls MP3 audio playback and synchronizes rotation animation state.",
+  "frontend/src/components/CategoryOverlay.tsx": "Glassmorphism overlay dialog component that displays dynamically loaded category content with backdrop blur, scroll area, and accessible keyboard controls.",
+  "frontend/src/content/categories.ts": "Frontend data source defining portfolio categories (Photography, Blender & Animations, Design, Electronics) with descriptions and content for dynamic overlay display.",
+  "frontend/src/lib/assetUrl.ts": "Helper utility that builds base-path-safe asset URLs using Vite's BASE_URL for GitHub Pages subpath hosting compatibility.",
+  "frontend/src/index.css": "Global styles with dark theme OKLCH color system, glassmorphism utility class, custom focus styles for dark backgrounds, and smooth vinyl rotation animation keyframes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended font families (including serif for italic tagline), custom color tokens, and animation utilities.",
+  "frontend/src/hooks/useQueries.ts": "Minimal React Query hooks file as placeholder for future backend integration; currently all data is client-side."
+}

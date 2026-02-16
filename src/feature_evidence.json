@@ -1,0 +1,158 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-dark-minimal-experimental-portfolio-ui-with-a-full-screen-background-image-named-bg-png-that-is-visually-dimmed-reduced-brightness-and-uses-white-typography-throughout",
+      "featureTitle": "Create a single-page dark, minimal, experimental portfolio UI with a full-screen background image named \"bg.png\" that is visually dimmed (reduced brightness) and uses white typography throughout.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-horizontally-split-layout-using-flexbox-left-column-for-title-tagline-categories-right-column-for-the-vinyl-ui-ensure-elements-are-aligned-non-overlapping-and-responsive-including-small-screens",
+      "featureTitle": "Implement a horizontally split layout using Flexbox: left column for title/tagline/categories, right column for the vinyl UI. Ensure elements are aligned, non-overlapping, and responsive (including small screens).",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-left-column-content-with-1-site-title-text-exactly-shibhi-studio-2-a-cursive-italic-tagline-exactly-not-just-for-a-television-teleport-to-where-it-s-written-3-a-vertical-list-of-interactive-categories-photography-blender-animations-design-electronics",
+      "featureTitle": "Render the left column content with: (1) site title text exactly \"shibhi.studio\"; (2) a cursive italic tagline exactly \"Not just for a television, Teleport to where it’s written.\"; (3) a vertical list of interactive categories: Photography, Blender & Animations, Design, Electronics.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/content/categories.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-clear-pointer-hover-active-interaction-affordances-for-category-options-and-the-play-pause-button-e-g-cursor-change-hover-styling-focus-styles-ensure-keyboard-accessibility-for-opening-closing-overlays-and-toggling-play-pause",
+      "featureTitle": "Add clear pointer/hover/active interaction affordances for category options and the play/pause button (e.g., cursor change, hover styling, focus styles). Ensure keyboard accessibility for opening/closing overlays and toggling play/pause.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CategoryOverlay.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-a-large-vinyl-record-image-named-vinyl-png-in-the-right-column-and-implement-smooth-continuous-rotation-when-audio-is-playing-rotation-must-pause-when-audio-is-paused",
+      "featureTitle": "Display a large vinyl record image named \"vinyl.png\" in the right column and implement smooth continuous rotation when audio is playing; rotation must pause when audio is paused.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/VinylPlayer.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-play-pause-toggle-button-positioned-at-the-center-of-the-vinyl-when-pressed-it-must-start-pause-playback-of-an-mp3-audio-file-and-simultaneously-control-the-vinyl-rotation-state",
+      "featureTitle": "Add a play/pause toggle button positioned at the center of the vinyl. When pressed, it must start/pause playback of an MP3 audio file and simultaneously control the vinyl rotation state.",
+      "files": [
+        "frontend/src/components/VinylPlayer.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-category-overlays-clicking-any-category-opens-a-small-glass-morphism-style-overlay-panel-transparent-with-blurred-backdrop-that-displays-dynamically-loaded-content-for-that-category",
+      "featureTitle": "Implement category overlays: clicking any category opens a small glass-morphism style overlay panel (transparent with blurred backdrop) that displays dynamically loaded content for that category.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CategoryOverlay.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-all-static-assets-bg-png-vinyl-png-and-the-mp3-file-are-handled-as-frontend-static-files-and-referenced-in-a-way-that-works-when-deployed-under-a-non-root-base-path-e-g-github-pages-style-subpath-hosting",
+      "featureTitle": "Ensure all static assets (bg.png, vinyl.png, and the MP3 file) are handled as frontend static files and referenced in a way that works when deployed under a non-root base path (e.g., GitHub Pages-style subpath hosting).",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx",
+        "frontend/src/components/VinylPlayer.tsx",
+        "frontend/src/lib/assetUrl.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
